@@ -7,6 +7,8 @@ ignore_list = [] # 忽略文件目录列表
 convert_success_file_list = [] # 文件转换成功列表
 convert_fail_file_list = []	   # 文件转换失败列表
 
+if not os.path.exists('./log'):
+	os.mkdir('./log')
 dump_file_name = './log/' + time.strftime("%Y-%m-%d.log", time.localtime())
 dump_file = open(dump_file_name, 'a+')
 
@@ -245,6 +247,7 @@ def ignore_list_handle(value):
 			
 modes = ('zh-hans', 'zh-hant')
 def main(argv):
+	
 	path = ''
 	mode = 'zh-hant'
 	
